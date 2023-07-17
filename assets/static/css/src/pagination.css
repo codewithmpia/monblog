@@ -1,0 +1,38 @@
+.pagination-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.pagination-container span {
+    font-weight: 900;
+    font-size: 22px;
+}
+
+.pagination {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.page {
+    display: flex;
+    align-items: center;
+}
+
+.page.disabled {
+    color: var(--color1);
+}
+
+.page.link {
+    box-shadow: var(--shadow2);
+    padding: 2px 10px;
+    border-radius: var(--radius);
+    border: 1px solid var(--border-color);
+}
+
+.page.link.active {
+    background-color: var(--accent1);
+    color: var(--color2);
+}

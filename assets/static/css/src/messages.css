@@ -1,0 +1,31 @@
+.alert {
+    width: calc(100% - 30px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    border-radius: var(--radius);
+    margin-bottom: 20px;
+}
+
+.alert.alert-success {
+    color: #0F5232;
+    background-color: #D1E7DE;
+    border: 1px solid #BADBCC;
+}
+
+.alert.alert-warning {
+    color: #654D03;
+    background-color: #FFF2CD;
+    border: 1px solid #FFECB5;
+}
+
+.alert.alert-info, .alert.alert-message {
+    color: #246371;
+    background-color: #CFF4FC;
+    border: #B6EEFB;
+}
+
+.alert-close {
+    cursor: pointer;
+}

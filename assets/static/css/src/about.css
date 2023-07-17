@@ -1,0 +1,184 @@
+.competences {
+    margin: 30px 0 50px 0;
+}
+
+.skills {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(280px,1fr));
+    gap: var(--gap);
+    grid-auto-flow: dense;
+    margin: 20px 0;
+}
+
+.skill{
+    width: 100%;
+    text-transform: uppercase;
+}
+
+.skill-line {
+    position: relative;
+    height: 14px;
+    width: 100%;
+    background-color: #ede4e4;
+    border-radius: var(--radius);
+    transform: scaleX(0);
+    transform-origin: left;
+    animation: animate 1s cubic-bezier(1, 0, 0.5, 1) forwards;
+}
+
+.skill-line span {
+    height: 100%;
+    position: absolute;
+    background: var(--accent1);
+    border-radius: var(--radius);
+    transform-origin: left;
+    animation: animate 1s 1.5s cubic-bezier(1, 0, 0.5, 1) forwards;
+}
+
+.skill-line.python span {
+    width: 80%;
+}
+
+.skill-line.django span {
+    width: 89%;
+}
+
+.skill-line.flask span {
+    width: 95%;
+}
+
+.skill-line.javascript span {
+    width: 60%;
+}
+
+.skill-line.vue span {
+    width: 40%;
+}
+
+.skill-line.html span {
+    width: 90%;
+}
+
+.skill-line.css span {
+    width: 65%;
+}
+
+.skill-line.bootstrap span {
+    width: 60%;
+}
+
+.skill-line.linux span {
+    width: 70%;
+}
+
+.skill-line.docker span {
+    width: 75%;
+}
+
+.skill-line.git span {
+    width: 90%;
+}
+
+.skill-line span::after {
+    position: absolute;
+    top: -7px;
+    right: 5px;
+    color: var(--color2);
+    border-radius: 3px;
+    font-size: 12px;
+}
+
+.skill-line.python span::after {
+    content: "80%";
+}
+
+.skill-line.django span::after {
+    content: "89%";
+}
+
+.skill-line.flask span::after {
+    content: "95%";
+}
+
+.skill-line.javascript span::after {
+    content: "60%";
+}
+
+.skill-line.vue span::after {
+    content: "40%";
+}
+
+.skill-line.html span::after {
+    content: "90%";
+}
+
+.skill-line.css span::after {
+    content: "65%";
+}
+
+.skill-line.bootstrap span::after {
+    content: "60%";
+}
+
+.skill-line.linux span::after {
+    content: "70%";
+}
+
+.skill-line.docker span::after {
+    content: "75%";
+}
+
+.skill-line.git span::after {
+    content: "90%";
+}
+
+.projects {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(200px,1fr));
+    gap: var(--gap);
+    grid-auto-flow: dense;
+    margin: 20px 0;
+}
+
+.project {
+    box-shadow: var(--shadow2);
+    border-radius: var(--radius);
+    transition: .3s;
+    width: 100%;
+}
+
+.project img {
+    width: 100%;
+}
+
+.project:hover {
+    scale: 1.03;
+}
+
+.filters {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    margin: 20px 0;
+}
+
+.filter-link {
+    text-decoration: none;
+    padding: 5px 10px;
+}
+
+.filter-link.selected {
+    background-color: var(--accent1);
+    color: var(--color2);
+}
+
+@keyframes animate {
+    100% {
+        transform: scaleX(1);
+    }
+}

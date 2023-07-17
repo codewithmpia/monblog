@@ -1,0 +1,112 @@
+:root {
+    --color1: #121C42;
+    --color2: #fff;
+    --size: 17px;
+    --line-height: 28px;
+    --contents-bg: #F8FAFB;
+    --border-color: #8EC9E6;
+    --accent1: #239EBC;
+    --accent2: #087996;
+    --accent3: #FC8500;
+    --gap: 20px;
+    --shadow1: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
+    --shadow2: rgba(0, 0, 0, 0.09) 0px 3px 12px;
+    --font: "Roboto", sans-serif;
+    --radius: 5px;
+}
+
+*, ::after, ::before {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--color2);
+    color: var(--color1);
+    font-family: var(--font);
+    font-size: var(--size);
+    line-height: var(--line-height);
+    width: 100%;
+}
+
+#header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: var(--color2);
+    z-index: 5;
+}
+
+#main {
+    margin: 100px 0 60px 0;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.contents {
+    width: 100%;
+    padding: 30px 0;
+    margin: 30px 0;
+    background-color: var(--contents-bg);
+    border-top: 2px dashed var(--border-color);
+    border-bottom: 2px dashed var(--border-color);
+}
+
+h1 {
+    font-weight: 900;
+    font-size: 50px;
+    line-height: 55px;
+}
+
+h2 {
+    font-weight: 800;
+    font-size: 40px;
+    line-height: 45px;
+}
+
+h3 {
+    font-weight: 800;
+    font-size: 30px;
+    line-height: 25px;
+}
+
+img {
+    width: 100%;
+    border-radius: var(--radius);
+    margin: 10px 0;
+}
+
+p {
+    margin: 10px 0;
+}
+
+li {
+    margin-left: 16px;
+}
+
+a {
+    color: var(--color1);
+    text-decoration:underline;
+}
+
+a:hover {
+    color: var(--accent3);
+}
+img {
+    border-radius: var(--radius);
+}
+
+.trait {
+    width: 20px;
+    margin: 5px 0;
+    border-bottom: 3px solid var(--accent3);
+}
+
+@media screen and (max-width: 1040px) {
+    .container {
+        padding: 0 20px;
+    }
+}

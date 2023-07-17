@@ -1,0 +1,40 @@
+{% extends 'partials/base.html' %}
+
+{% block title %}
+    Chercher | {{ site_name }}
+{% endblock title %}
+
+
+{% block main %}
+    <div class="container">
+        <h1>Recherche des articles</h1>
+        <p>
+            Taper un mot et notre système lancera la recherche, 
+            s'il y a correspondance, vous aurez le résultat.
+        </p>
+    </div>
+    <div class="contents">
+        <div class="container">
+            <form method="GET">
+                <div class="form-group">
+                    <input type="search" name="q" id="q" class="form-control" placeholder="Taper votre recherche ici ...">
+                </div>
+                <div class="form-group">
+                    <button type="submit" id="submit">Chercher</button>
+                </div>
+            </form>
+
+            <div class="posts">
+                {% if q %}
+                    {% if posts.count() > 0 %}
+                        {% for post in posts %}
+                            <a href="{{ url_for('post_detail', post_id=post.id, post_slug=post.slug) }}">{{ post.title }}</a>
+                        {% endfor %}
+                    {% else %}
+                        <p>Aucun article ne correspond à votre recherche.</p>
+                    {% endif %}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endblock main %}

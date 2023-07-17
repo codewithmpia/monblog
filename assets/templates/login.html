@@ -1,0 +1,34 @@
+{% extends 'partials/base.html' %}
+
+{% block title %}
+    Se connecter | {{ site_name }}
+{% endblock title %}
+
+
+{% block main %}
+    <div class="container">
+        <h1>Connexion</h1>
+    </div>
+
+    <div class="contents">
+        <div class="container">
+            {# Include messages #}
+            {% include "partials/messages.html" %}
+            
+            <form method="post">
+                {{ form.csrf_token }}
+                <div class="form-group">
+                    <label for="username" class="form-label">{{ form.username.label }}</label>
+                    {{ form.username }}
+                </div>
+                <div class="form-group">
+                    <label for="password" class="form-label">{{ form.password.label }}</label>
+                    {{ form.password }}
+                </div>
+                <div class="form-group">
+                    {{ form.submit }}
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock main %}

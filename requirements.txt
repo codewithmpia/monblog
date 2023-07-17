@@ -1,0 +1,14 @@
+email-validator
+Flask
+Flask-Admin
+Flask-Assets
+Flask-Login
+Flask-SQLAlchemy
+Flask-WTF
+Markdown
+Pillow
+Pygments
+PyMySQL
+python-dotenv
+python-slugify
+

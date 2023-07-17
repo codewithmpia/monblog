@@ -1,0 +1,56 @@
+{% extends 'partials/base.html' %}
+
+{% block title %}
+    Blog | {{ site_name }}
+{% endblock title %}
+
+
+{% block main %}
+    <div class="container">
+        <h1>Tous les articles</h1>
+
+        <div class="dropdown-container">
+            {% include "partials/dropdown.html" %}
+        </div>
+    </div>
+
+    <div class="contents">
+        <div class="container">
+            {# Include messages #}
+            {% include "partials/messages.html" %}
+            
+            {% if posts.total > 0 %}
+                {% for post in posts %}
+                    <div class="post">
+                        <a href="{{ url_for('post_detail', post_id=post.id, post_slug=post.slug) }}">
+                            <h2>{{ post.title }}</h2>
+                        </a>
+                        <div class="post-meta">
+                            <span>{{ post.date|format_date }}</span>
+                            <span>{{ post.comments|active|length }} Commentaire{{ post.comments|active|length|pluralize }}</span>
+                            <span>auteur {{ post.author }}</span>
+                        </div>
+                        <div class="post-resume">{{ post.resume|truncate(300) }}</div>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <div class="alert alert-info">
+                    <strong>
+                        {% if category %}
+                            Cette catégorie ne contient pas d'articles pour le moment.
+                        {% else %}
+                            Aucun article n'est disponible pour le moment.
+                        {% endif %}
+                    </strong>
+                </div>
+            {% endif %}
+
+            {% if posts.total > 10 %}
+                <div class="pagination-container">
+                    {% include "partials/pagination.html" %}
+                    <span>Page {{ posts.page }} sur {{ posts.pages }}</span>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+{% endblock main %}
