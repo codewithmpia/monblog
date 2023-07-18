@@ -53,7 +53,7 @@
     font-weight: 600;
 }
 
-.navbar-menu a.active {
+.navigation a.active {
     color: var(--accent1);
 }
 

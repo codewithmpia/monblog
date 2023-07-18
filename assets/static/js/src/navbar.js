@@ -1,7 +1,7 @@
 let menu = document.querySelector(".navbar-menu")
 let mobile = document.querySelector(".mobile")
 let mobileIcons = mobile.querySelectorAll(".bi")
-let links = menu.querySelectorAll("a")
+let links = document.querySelectorAll(".navigation a")
 let currentLink = 0
 
 mobile.addEventListener("click", (e)=> {
