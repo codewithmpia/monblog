@@ -29,6 +29,7 @@ css = Bundle(
     "css/src/posts.css",
     "css/src/about.css",
     "css/src/footer.css",
+    filters=["cssmin"],
     output="css/dist/main.min.css"
 )
 
@@ -36,5 +37,6 @@ js = Bundle(
     "js/src/main.js",
     "js/src/navbar.js",
     "js/src/dropdown.js",
+    filters=["jsmin"],
     output="js/dist/main.min.js"
 )

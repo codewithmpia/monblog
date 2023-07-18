@@ -45,11 +45,8 @@
                 </div>
             {% endif %}
 
-            {% if posts.total > 10 %}
-                <div class="pagination-container">
-                    {% include "partials/pagination.html" %}
-                    <span>Page {{ posts.page }} sur {{ posts.pages }}</span>
-                </div>
+            {% if posts.total > 1 %}
+                {% include "partials/pagination.html" %}
             {% endif %}
         </div>
     </div>

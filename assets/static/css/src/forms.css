@@ -29,6 +29,7 @@
 
 .form-control:hover {
     outline: 1px solid var(--accent1);
+    border-radius: var(--radius);
 }
 
 #q {

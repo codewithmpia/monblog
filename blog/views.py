@@ -29,7 +29,7 @@ def post_list(category_slug=None, category_id=None):
     else:
         page = 1
 
-    posts = posts.paginate(page=page, per_page=10)
+    posts = posts.paginate(page=page, per_page=1)
 
     return render_template(
         "post_list.html", 

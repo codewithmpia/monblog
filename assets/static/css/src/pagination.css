@@ -1,19 +1,11 @@
-.pagination-container {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.pagination-container span {
-    font-weight: 900;
-    font-size: 22px;
-}
-
 .pagination {
     display: flex;
     align-items: center;
     gap: 10px;
+}
+
+.pagination a {
+    text-decoration: none;
 }
 
 .page {
