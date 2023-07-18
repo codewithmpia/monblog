@@ -29,7 +29,7 @@ def post_list(category_slug=None, category_id=None):
     else:
         page = 1
 
-    posts = posts.paginate(page=page, per_page=1)
+    posts = posts.paginate(page=page, per_page=10)
 
     return render_template(
         "post_list.html", 
@@ -74,22 +74,9 @@ def post_detail(post_id, post_slug):
     
 
 @blog.route("/about/")
-@blog.route("/about/<string:filter_slug>/<int:filter_id>/")
-def about(filter_slug=None, filter_id=None):
-    filter = None
-    filters = models.Filter.query.all()
+def about():
     projects = models.Project.query.filter_by(active=True).order_by(models.Project.date.desc())
-
-    if filter_id:
-        filter = models.Filter.query.get_or_404(filter_id, filter_slug)
-        projects = projects.filter_by(filter_id=filter.id)
-
-    return render_template(
-        "about.html", 
-        filter=filter,
-        filters=filters,
-        projects=projects
-    )
+    return render_template("about.html", projects=projects)
     
 
 @blog.route("/contact/", methods=("GET", "POST"))

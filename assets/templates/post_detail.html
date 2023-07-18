@@ -28,7 +28,7 @@
             <div class="post-image">
                 <img 
                     src="{% if post.image %} 
-                            {# Image de 900x300 #}
+                            {# Image de w: 900 et h: 300 #}
                             /{{ post.image }} 
                         {% else %}
                             {{ url_for('static', filename='images/no-image.jpeg') }}
@@ -37,6 +37,7 @@
                 >
             </div>
             <div class="post-content">
+                {# Image de w: 900 #}
                 {{ post.content|format_markdown|safe }}
             </div>
 

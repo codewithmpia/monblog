@@ -143,39 +143,27 @@
 }
 
 .project {
-    box-shadow: var(--shadow2);
     border-radius: var(--radius);
     transition: .3s;
     width: 100%;
 }
 
+.project a {
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
 .project img {
     width: 100%;
+    margin: 0;
+    box-shadow: var(--shadow2);
 }
 
 .project:hover {
     scale: 1.03;
 }
 
-.filters {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    border: 1px solid var(--border-color);
-    border-radius: var(--radius);
-    margin: 20px 0;
-}
-
-.filter-link {
-    text-decoration: none;
-    padding: 5px 10px;
-}
-
-.filter-link.selected {
-    background-color: var(--accent1);
-    color: var(--color2);
-}
 
 @keyframes animate {
     100% {

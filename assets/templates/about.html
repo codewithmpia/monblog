@@ -9,7 +9,7 @@
     <div class="container">
         <h1>Qui suis-je ?</h1>
         <p>
-            Passionné de nouvelles technologies et de la programmation, j'ai toujours eu l'envie de connaître 
+            Passionné de nouvelles technologies et de la programmation informatique, j'ai toujours eu l'envie de connaître 
             comment fonctionnait les choses. J'ai tout appris par moi-même en lisant des livres, 
             visionant de vidéos et de tutos sur internet. 
             Alors j'ai décidé de partager gratuitement ce que j'ai appris 
@@ -138,20 +138,11 @@
             <h3>Projets réalisés</h3>
             <div class="trait"></div>
 
-            {% if filters|length > 0 %}
-                <div class="filters">
-                    {% for filter in filters %}
-                        <a href="{{ url_for('about', filter_slug=filter.slug, filter_id=filter.id) }}" class="filter-link">
-                            {{ filter.name }}
-                        </a>
-                    {% endfor %}
-                </div>
-            {% endif %}
-
             <div class="projects">
                 {% for project in projects %}
                     <div class="project">
                         <a href="{{ project.url }}" target="_blank" title="{{ project.title }}">
+                            {# image de w:200 h: 140 #}
                             <img src="/{{ project.image }}" alt="{{ project.title }}" srcset="">
                         </a>
                     </div>
@@ -159,23 +150,4 @@
             </div>
         </div>
     </div>
-
-    <script>
-        let filters = document.querySelectorAll(".filter-link")
-        let currentFilter = 0
-
-        if (filters) {
-            for (let i=0; i < filters.length; i++) {
-                let filter = filters[i]
-                
-                if (filter.href == document.location.href) {
-                    currentFilter = i
-                }
-            }
-
-            if ( filters[currentFilter] !== undefined ) {
-                filters[currentFilter].classList.add("selected")
-            }
-        }
-    </script>
 {% endblock main %}

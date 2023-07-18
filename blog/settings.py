@@ -54,8 +54,7 @@ admin.add_views(
     adm.CategoryAdminView(models.Category, db.session, category="Blog"),
     adm.PostAdminView(models.Post, db.session, category="Blog"),
     adm.CommentAdminView(models.Comment, db.session, category="Blog"),
-    adm.FilterAdminView(models.Filter, db.session,  category="Folio"),
-    adm.ProjectAdminView(models.Project, db.session, category="Folio"),
+    adm.ProjectAdminView(models.Project, db.session),
     adm.ContactAdminView(models.Contact, db.session),
     adm.NewsLetterAdminView(models.Newsletter, db.session)
 )

@@ -69,31 +69,9 @@ class Comment(db.Model):
         return self.name
     
 
-class Filter(db.Model):
-    __tablename__ = "filters"
-    id = db.Column(db.Integer(), primary_key=True)
-    name = db.Column(db.String(255), nullable=False)
-    slug = db.Column(db.String(255), unique=True)
-    projects = db.relationship("Project", backref="filter")
-
-    def __init__(self, *args, **kwargs):
-        super().__init__(args, kwargs)
-        self.generate_slug()
-
-    def generate_slug(self):
-        if self.name:
-            self.slug = slugify(self.name)
-        else:
-            self.slug = ""
-
-    def __str__(self):
-        return self.name
-    
-
 class Project(db.Model):
     __tablename__ = "projects"
     id = db.Column(db.Integer(), primary_key=True)
-    filter_id = db.Column(db.Integer(), db.ForeignKey("filters.id"))
     title = db.Column(db.String(255), nullable=False)
     image = db.Column(db.Unicode(128))
     url = db.Column(db.String(255), nullable=False)

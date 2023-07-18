@@ -166,3 +166,7 @@ db.sqlite3
 .webassets-cache/
 
 __pycache__/
+
+
+projects/ 
+posts/
