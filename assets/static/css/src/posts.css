@@ -21,11 +21,6 @@
     text-align: justify;
 }
 
-.post-image {
-    width: 100%;
-    border-radius: var(--radius);
-}
-
 .post-content {
     margin: 20px 0;
     text-align: justify;

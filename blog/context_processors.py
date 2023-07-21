@@ -13,4 +13,4 @@ def inject_year():
     return {"year": datetime.now().year}
 
 def inject_site_name():
-    return {"site_name": "codewithmpia"}
+    return {"site_name": "codewithmpia.fr"}

@@ -44,6 +44,7 @@ def post_list(category_slug=None, category_id=None):
 def post_detail(post_id, post_slug):
     post = models.Post.query.get_or_404(post_id, post_slug)
     category = models.Category.query.get_or_404(post.category_id)
+
     form = forms.CommentForm()
 
     if request.method == "POST" and form.validate_on_submit():
@@ -163,3 +164,5 @@ def page_not_found(error):
 @blog.errorhandler(500)
 def server_error(error):
     return render_template("500.html"), 500
+
+
