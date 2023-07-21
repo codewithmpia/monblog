@@ -42,9 +42,9 @@ from .import admin as adm
 
 admin = Admin(
     blog, 
-    name="admin", 
+    name="CODEWITHMPIA.FR", 
     index_view=adm.CustomAdminIndexView(
-        name="Accueil",
+        name="Administration", 
         template="admin/index.html",
     ), 
     template_mode="bootstrap4"

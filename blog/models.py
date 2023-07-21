@@ -72,15 +72,11 @@ class Comment(db.Model):
 class Project(db.Model):
     __tablename__ = "projects"
     id = db.Column(db.Integer(), primary_key=True)
-    title = db.Column(db.String(255), nullable=False)
     image = db.Column(db.Unicode(128))
     url = db.Column(db.String(255), nullable=False)
     date = db.Column(db.DateTime(), default=datetime.utcnow())
     active = db.Column(db.Boolean(), default=False)
-
-    def __str__(self):
-        return self.title
-    
+   
 
 class Contact(db.Model):
     __tablename__ = "contacts"

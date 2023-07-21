@@ -1,19 +1,45 @@
 {% extends 'admin/master.html' %}
 
 {% block body %}
-    <div class="container">
-        <h1>Bienvenue</h1>
+    <div class="bg-info py-2 px-3 text-white rounded">
+        <h3>Bonjour <span class="text-capitalize">{{ current_user.username }}</span></h3>
+    </div>
+    <div class="shadow p-3 my-3 rounded">
+        <h1 class="display-6 fw-bold text-uppercase text-primary">
+            Aide-mémoire
+        </h1>
 
-        <p>Pour insérer une image dans le markdown, on fera: </p>
+        <h3>Rédaction des articles</h3>
 
-        ![Alt text](URL or file path) <br>
+        <p>Voici quelques astuces à connaître pour rédiger les articles:</p>
 
-        exp: <br>
-        ![post_1_1](/static/images/contents/post_1/post_1_1.jpg)
+        <ul>
+            <li>La miniature: 
+                Les dimensions de la miniature sont : width: <strong>900px</strong> et height: <strong>300px</strong>
+            </li>
+            <li>Images dans l'article: 
+                <strong>![Alt text](URL or file path)</strong> <br>
+                Exemple: <strong>![post_1_1](/static/images/contents/post_1/post_1_1.jpg)</strong> <br>
+                Il est important de signaler que les images seront sauvegardées dans dossier nommé de cette façon: <strong>post_id/</strong>
+            </li>
+        </ul>
 
-        <br>
+        <h3>Rédaction des projets</h3>
 
-        <a href="{{ url_for('logout') }}" class="btn btn-primary btn-sm my-4">Se déconnecter</a>
+        <ul>
+            <li>L'image du projet :
+                a pour dimensions: Width: <strong>200px</strong> et Height: <strong>140px</strong>
+            </li>
+            <li>Lien Github du projet:
+                exp: <strong>https://github.com/mpiadev/nom_projet.git</strong>
+            </li>
+        </ul>
 
+        <p>Chaque session dure 5 minutes.</p>
+        
+        <p>Cliquer sur
+            <a href="{{ url_for('logout') }}">déconnexion</a>
+            pour vous déconnecter.
+        </p>
     </div>
 {% endblock %}
