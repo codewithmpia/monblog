@@ -158,8 +158,20 @@ def get_newsletter_data():
         news = models.Newsletter(email=email)
         db.session.add(news)
         db.session.commit()
+
+        msg = Message(
+            subject="Confirmation abonnement",
+            sender=blog.config["MAIL_USERNAME"],
+            recipients=[email]
+        )
+        msg.html = render_template(
+            "partials/confirmation_news.html"
+        )
+        mail.send(msg)
+
         flash("Vous êtes maintenant abonné.", "success")
         return redirect(request.referrer)
+    
     return redirect(request.referrer)
 
 
