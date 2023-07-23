@@ -16,6 +16,19 @@
     color: #121c42ad;
 }
 
+.post-detail-meta {
+    width: 100%;
+    margin: 5px 0;
+    color: #121c42ad;
+}
+
+.post-detail-meta .point {
+    display: inline-block;
+    width: 8px;
+    border-bottom: 3px solid var(--accent3);
+    margin: 0 10px;
+}
+
 .post-resume {
     margin: 10px 0;
     text-align: justify;
@@ -26,6 +39,15 @@
     text-align: justify;
 }
 
+.separator {
+    width: 100%;
+    border-bottom: 1px solid var(--border-color);
+    margin: 40px 0px;
+}
+
+.separator.first {
+    margin-top: -15px;
+}
 
 .comments {
     margin: 30px 0;
@@ -52,7 +74,9 @@
 }
 
 .comment-date {
+    display: block;
     color: #121c42ad;
+    margin-top: -20px;
 }
 
 .comment-message {
@@ -63,8 +87,8 @@
     margin: 20px 0;
     padding: 20px;
     background-color: #ebebeb77;
-    overflow: auto;
     border-radius: var(--radius);
     font-family: var(--font);
     font-size: var(--size);
+    overflow: auto;
 }

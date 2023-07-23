@@ -51,6 +51,19 @@ class NewsLetterForm(FlaskForm):
     submit = SubmitField(label="S'abonner")
 
 
+class EmailForm(FlaskForm):
+    subject = StringField(
+        label="Le sujet du mail",
+        validators=[DataRequired()],
+        render_kw={"class": "form-control"}
+    )
+    corps = TextAreaField(
+        label="Le corps du mail",
+        validators=[DataRequired()],
+        render_kw={"class": "form-control"}
+    )
+    submit = SubmitField(label="Envoyer")
+
 
 class LoginForm(FlaskForm):
     username = StringField(

@@ -1,5 +1,6 @@
 from pathlib import Path
 import os
+import requests
 
 from flask_assets import Bundle
 
@@ -17,6 +18,19 @@ def get_env_vars(name, default):
 
 def allowed_file(filename):
     return "." in filename and filename.rsplit(".", 1)[1].lower() in ALLOWED_EXTENSIONS
+
+
+def send_sms(msg):
+    user_id = get_env_vars("SMS_USER_ID", "codewithmpia")
+    api_key = get_env_vars("SMS_API_KEY", "top-secret")
+
+    url = f"https://smsapi.free-mobile.fr/sendmsg?user={user_id}&pass={api_key}&msg={msg}"
+
+    req = requests.post(url)
+
+    if req.status_code != 200:
+        pass
+    return f"Message envoyé avec success!, {req.status_code}"
 
 
 css = Bundle(
@@ -40,3 +54,4 @@ js = Bundle(
     filters=["jsmin"],
     output="js/dist/main.min.js"
 )
+

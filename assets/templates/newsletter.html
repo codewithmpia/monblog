@@ -1,35 +1,32 @@
 {% extends 'partials/base.html' %}
 
-{% block title %}
-    Se connecter | {{ site_name }}
-{% endblock title %}
-
 
 {% block main %}
     <div class="container">
-        <h1>Connexion</h1>
-        <p>Entrez vos identifiants et connectez-vous.</p>
+        <h1>Rédation des mails</h1>
+        <p>Les articles, actualités du mois de {{ date.strftime("%m/%Y") }}</p>
     </div>
 
     <div class="contents">
         <div class="container">
             {# Include messages #}
             {% include "partials/messages.html" %}
-            
+                
             <form method="post">
                 {{ form.csrf_token }}
                 <div class="form-group">
-                    {{ form.username.label }}
-                    {{ form.username }}
+                    {{ form.subject.label }}
+                    {{ form.subject }}
                 </div>
                 <div class="form-group">
-                    {{ form.password.label }}
-                    {{ form.password }}
+                    {{ form.corps.label }}
+                    {{ form.corps }}
                 </div>
                 <div class="form-group">
                     {{ form.submit }}
                 </div>
             </form>
+            <p>Retour vers <a href="{{ url_for("admin.index") }}">admin</a>.</p>
         </div>
     </div>
 {% endblock main %}

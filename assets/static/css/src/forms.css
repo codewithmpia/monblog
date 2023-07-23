@@ -10,7 +10,7 @@
     width: 100%;
 }
 
-.form-label {
+label {
     display: block;
     text-transform: uppercase;
     margin-bottom: 10px;
@@ -41,7 +41,7 @@
     width: 100%;
 }
 
-#message {
+#message, #corps {
     height: 180px;
 }
 

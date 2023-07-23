@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+</head>
+<body
+    style="
+        font-family: 'Roboto', sans-serif;
+        font-size: 16px;
+        color: #121C42;
+        background-color: #fff;
+    "
+>
+    <p>Bonjour {{ name }}, </p>
+
+    <p>Nous avons bien réçu votre message et nous mettons tous en oeuvre pour vous répondre dans les meilleurs délais.</p>
+
+    <p>L'équipe du <a href="{{ request.url_root }}">{{ site_name }}</a>.</p>
+
+    <div style=" border-top: 1px dashed #121c42ad; padding-top: -10px;">
+        </div>
+        <p style="color: #121c42ad;">Message réçu le {{ date.strftime("%d/%m/%Y à %H:%M:%S") }}</p>
+        <p style="color: #121c42ad;">{{ message }}</p>
+    </div>
+</body>
+</html>

@@ -4,6 +4,7 @@ from flask import Flask, g
 from flask_sqlalchemy import SQLAlchemy
 from flask_admin import Admin
 from flask_login import LoginManager, current_user
+from flask_mail import Mail
 from flask_assets import Environment
 
 from .utils import BASE_DIR, css, js, get_env_vars as VAR
@@ -23,6 +24,15 @@ blog.config["UPLOAD_FOLDER"] = BASE_DIR / "assets/static/uploads"
 # Database
 blog.config["SQLALCHEMY_DATABASE_URI"] = VAR("DATABASE_URL", f"sqlite:///{BASE_DIR}/db.sqlite3")
 db = SQLAlchemy(blog)
+
+# Mail
+blog.config["MAIL_SERVER"]= VAR("MAIL_SERVER", "smtp.codewithmpia.fr")
+blog.config["MAIL_PORT"] = VAR("MAIL_PORT", 666)
+blog.config["MAIL_USERNAME"] = VAR("MAIL_USERNAME", "admin@codewithmpia.fr")
+blog.config["MAIL_PASSWORD"] = VAR("MAIL_PASSWORD", "top-secret")
+blog.config["MAIL_USE_TLS"] = False
+blog.config["MAIL_USE_SSL"] = True
+mail = Mail(blog)
 
 # Assets
 assets = Environment(blog)

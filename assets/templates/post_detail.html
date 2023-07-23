@@ -8,11 +8,13 @@
 {% block main %}
     <div class="container">
         <h1>{{ post.title }}</h1>
-        <div class="post-meta">
+        <div class="post-detail-meta">
             <span>Posté le {{ post.date|format_date }}</span>
+            <span class="point"></span>
             <a href="{{ url_for('post_list', category_id=category.id, category_slug=category.slug)}}">
                 {{ category.name }}
             </a>
+            <span class="point"></span>
             <span>Par {{ post.author }}</span>
         </div>
         <div class="post-resume">
@@ -42,17 +44,17 @@
             </div>
 
             <div class="comments">
-                <h3>{{ post.comments|active|length }} Commentaire{{ post.comments|active|length|pluralize }}</h3>
-                <div class="trait"></div>
+                <h3>Commentaire{{ post.comments|active|length|pluralize }} ({{ post.comments|active|length }})</h3>
+                <div class="separator first"></div>
 
                 <form method="post" class="comment-form">
                     {{ form.csrf_token }}
                     <div class="form-group">
-                        <label for="name" class="form-label">{{ form.name.label }}</label>
+                        {{ form.name.label }}
                         {{ form.name }}
                     </div>
                     <div class="form-group">
-                        <label for="message" class="form-label">{{ form.message.label }}</label>
+                        {{ form.message.label }}
                         {{ form.message }}
                     </div>
                     <div class="form-group">
@@ -61,7 +63,7 @@
                 </form>
 
                 {% if post.comments|active|length > 0 %}
-                    <div class="trait"></div>
+                    <div class="separator"></div>
 
                     {% for comment in post.comments|active %}
                         <div class="comment">

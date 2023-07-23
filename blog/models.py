@@ -34,7 +34,7 @@ class Post(db.Model):
     category_id = db.Column(db.Integer(), db.ForeignKey("categories.id"))
     title = db.Column(db.String(255), nullable=False)
     slug = db.Column(db.String(255), unique=True)
-    author = db.Column(db.String(100), default="codewithmpia")
+    author = db.Column(db.String(100), default="Codewithmpia")
     resume = db.Column(db.Text(500), nullable=False)
     content = db.Column(db.Text(), nullable=False)
     image = db.Column(db.Unicode(128))

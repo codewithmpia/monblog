@@ -24,7 +24,7 @@ class BaseModelMixin:
     
 
 class CategoryAdminView(BaseModelMixin, ModelView):
-    column_list = ["posts", "name"]
+    column_list = ["name", "posts"]
     form_excluded_columns = ["slug"]
 
     def on_model_change(self, form, model, is_created):

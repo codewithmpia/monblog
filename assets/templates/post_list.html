@@ -32,10 +32,9 @@
                         </a>
                         <div class="post-meta">
                             <span>{{ post.date|format_date }}</span>
-                            <span>{{ post.comments|active|length }} Commentaire{{ post.comments|active|length|pluralize }}</span>
-                            <span>auteur {{ post.author }}</span>
+                            <span>Par {{ post.author }}</span>
                         </div>
-                        <div class="post-resume">{{ post.resume|truncate(300) }}</div>
+                        <div class="post-resume">{{ post.resume|truncate(250) }}</div>
                     </div>
                 {% endfor %}
             {% else %}

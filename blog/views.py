@@ -3,9 +3,10 @@ from werkzeug.utils import secure_filename
 
 from flask import render_template, request, redirect, url_for, flash
 from flask_login import login_required
+from flask_mail import Message
 
 from .import forms 
-from .settings import blog, db
+from .settings import blog, db, mail
 from .import utils
 from .import models 
 
@@ -56,6 +57,16 @@ def post_detail(post_id, post_slug):
             message=message,
             post_id=post.id
         )
+
+        msg = f"""
+        Bonjour,
+        Un commentaire de {name} est en attente de modération.
+        Post: {post.title}
+        Date: {post.date.strftime("%d/%m/%Y")}
+        """
+
+        utils.send_sms(msg)
+
         db.session.add(new_comment)
         db.session.commit()
 
@@ -97,6 +108,23 @@ def contact():
         db.session.add(new_contact)
         db.session.commit()
 
+        # End confirmation email
+        msg = Message(
+            subject="Confirmation réception de votre message",
+            sender=blog.config["MAIL_USERNAME"],
+            recipients=[email]
+        )
+        msg.html = render_template(
+            "partials/confirmation_email.html", 
+            name=name, message=message
+        )
+        msg.attach(
+            filename="logo_main.jpg",
+            content_type="image/jpg",
+            data=url_for("static", filename="images/logo_main.jpg").encode()
+        )
+        mail.send(msg)
+       
         flash("Votre message a été envoyé avec succès.", "success")
 
         return redirect(url_for('contact'))
@@ -153,6 +181,37 @@ def upload_file():
         return redirect(url_for("upload_file"))
 
     return render_template("upload.html")
+
+
+@blog.route("/send_email/", methods=("GET", "POST"))
+@login_required
+def send_email_to_newsletter():
+    emails = models.Newsletter.query.all()
+    form = forms.EmailForm()
+
+    if request.method == "POST" and form.validate_on_submit():
+        subject = form.subject.data 
+        corps = form.corps.data 
+    
+        msg = Message(
+            subject=subject,
+            sender=blog.config["MAIL_USERNAME"],
+            recipients=[email.email for email in emails]
+        )
+        msg.html = render_template(
+            "partials/mail_data.html",
+            corps=corps
+        )
+        mail.send(msg)
+
+        flash("Vos mails ont été envoyé avec succès.", "success")
+
+        return redirect(url_for("send_email_to_newsletter"))
+    
+    elif form.errors:
+        flash(form.errors, "warning")
+
+    return render_template("newsletter.html", form=form)
 
 
 # Errors

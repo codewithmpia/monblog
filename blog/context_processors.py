@@ -10,7 +10,7 @@ def inject_newsletter_form():
     return {"newsletter_form": NewsLetterForm()}
 
 def inject_year():
-    return {"year": datetime.now().year}
+    return {"date": datetime.now()}
 
 def inject_site_name():
     return {"site_name": "codewithmpia.fr"}
