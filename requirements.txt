@@ -1,9 +1,11 @@
+beautifulsoup4
 cssmin
 email-validator
 Flask
 Flask-Admin
 Flask-Assets
 Flask-Login
+Flask-Mail
 Flask-SQLAlchemy
 Flask-WTF
 jsmin
@@ -13,3 +15,4 @@ Pygments
 PyMySQL
 python-dotenv
 python-slugify
+requests
