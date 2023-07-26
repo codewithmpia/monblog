@@ -9,7 +9,7 @@ def inject_last_posts():
 def inject_newsletter_form():
     return {"newsletter_form": NewsLetterForm()}
 
-def inject_year():
+def inject_date():
     return {"date": datetime.now()}
 
 def inject_site_name():

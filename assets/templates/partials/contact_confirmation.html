@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+</head>
+<body
+    style="
+        font-family: 'Roboto', sans-serif;
+        font-size: 16px;
+        color: #121C42;
+        background-color: #fff;
+    "
+>
+    <p>
+        <strong>Bonjour {{ name }}</strong>
+    </p>
+
+    <p>
+        Nous avons bien réçu votre message et 
+        nous mettons tout en oeuvre pour vous répondre dans les meilleurs délais.
+    </p>
+
+    <div style="margin: 15px 0;">
+        <p>Votre équipe / <a href="{{ request.url_root }}">{{ site_name }}</a>.</p>
+    </div>
+    
+    <div style=" border-top: 1px dashed #121c42ad; width: 50px;"></div>
+    </div>
+    
+    <div
+        style="
+            font-family: 'Roboto', sans-serif;
+            font-size: 15px;
+            color: #121c42ad;
+        "
+    >
+        <p>Message réçu le {{ date.strftime("%d/%m/%Y à %H:%M:%S") }}: </p>
+        <p>{{ message }}</p>
+    </div>
+
+    <div style=" border-top: 1px dashed #121c42ad; width: 50px;"></div>
+    </div>
+
+    <div>
+        <img src="cid:logo_mail" style="width: 200px; margin-top: 10px;">
+    </div>
+</body>
+</html>

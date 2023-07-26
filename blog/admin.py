@@ -8,6 +8,10 @@ from .utils import BASE_DIR
 
 
 class CustomAdminIndexView(AdminIndexView):
+    """
+        - Restrict access to the Admin 
+        - Customize the administration homepage.
+    """
     @expose("/")
     def index(self):
         if current_user.is_authenticated and current_user.is_admin:

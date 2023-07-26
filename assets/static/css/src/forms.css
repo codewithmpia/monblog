@@ -1,3 +1,7 @@
+form {
+    margin: 30px 0;
+}
+
 .form-row {
     width: 100%;
     display: grid;
@@ -35,6 +39,10 @@ label {
 .form-control:focus {
     outline: 1px solid var(--accent1);
     border-radius: var(--radius);
+}
+
+#news_email {
+    background-color: var(--color2);
 }
 
 #q {

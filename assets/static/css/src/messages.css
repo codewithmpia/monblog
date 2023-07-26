@@ -5,7 +5,7 @@
     align-items: center;
     padding: 10px 15px;
     border-radius: var(--radius);
-    margin-bottom: 20px;
+    margin-top: 30px;
 }
 
 .alert.alert-success {
@@ -24,6 +24,10 @@
     color: #246371;
     background-color: #CFF4FC;
     border: #B6EEFB;
+}
+
+.alert.alert-info.empty {
+    margin-bottom: 30px;
 }
 
 .alert-close {

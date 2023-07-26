@@ -53,7 +53,7 @@ body {
 
 .contents {
     width: 100%;
-    padding: 30px 0;
+    padding: 0;
     margin: 30px 0;
     background-color: var(--contents-bg);
     border-top: 2px dashed var(--border-color);
@@ -109,6 +109,7 @@ a {
 a:hover {
     color: var(--accent3);
 }
+
 img {
     border-radius: var(--radius);
 }
@@ -124,10 +125,15 @@ img {
     font-weight: 900;
 }
 
+.container.top {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+}
+
 .go-top {
     position: fixed;
     bottom: 30px;
-    right:  20px;
     z-index: 99;
     display: none;
     background-color: var(--accent1);

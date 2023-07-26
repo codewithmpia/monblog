@@ -6,6 +6,7 @@ from .models import User
 from .forms import LoginForm
 
 
+# Login view
 @blog.route("/login/", methods=("GET", "POST"))
 def login():
     if current_user.is_authenticated and current_user.is_admin:
@@ -35,6 +36,9 @@ def login():
     return render_template("login.html", form=form)
 
 
+# -------------- </> ------------------ #
+
+# Logout view
 @blog.route("/logout/")
 @login_required
 def logout():

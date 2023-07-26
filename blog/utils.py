@@ -5,6 +5,7 @@ import requests
 from flask_assets import Bundle
 
 BASE_DIR = Path(__file__).resolve().parent.parent
+
 ALLOWED_EXTENSIONS = ("png", "jpeg", "jpg", "gif", "txt", "pdf", "md", "json")
 
 def get_env_vars(name, default):
@@ -31,7 +32,6 @@ def send_sms(msg):
     if req.status_code != 200:
         pass
     return f"Message envoyé avec success!, {req.status_code}"
-
 
 css = Bundle(
     "css/src/main.css",

@@ -135,19 +135,21 @@
             </div>
             
 
-            <h3>Projets réalisés</h3>
-            <div class="trait"></div>
+            {% if projects.count() > 0 %}
+                <h3>Projets réalisés</h3>
+                <div class="trait"></div>
 
-            <div class="projects">
-                {% for project in projects %}
-                    <div class="project">
-                        <a href="{{ project.url }}" target="_blank" title="{{ project.title }}">
-                            {# image de w:200 h: 140 #}
-                            <img src="/{{ project.image }}" alt="{{ project.title }}">
-                        </a>
-                    </div>
-                {% endfor %}
-            </div>
+                <div class="projects">
+                    {% for project in projects %}
+                        <div class="project">
+                            <a href="{{ project.url }}" target="_blank" title="{{ project.title }}">
+                                {# image de w:280  #}
+                                <img src="/{{ project.image }}" alt="{{ project.title }}">
+                            </a>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endif %}
         </div>
     </div>
 {% endblock main %}

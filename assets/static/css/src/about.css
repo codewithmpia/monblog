@@ -1,5 +1,5 @@
 .competences {
-    margin: 30px 0 50px 0;
+    margin: 30px 0 60px 0;
 }
 
 .skills {
@@ -136,10 +136,10 @@
 .projects {
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(auto-fill,minmax(200px,1fr));
+    grid-template-columns: repeat(auto-fill,minmax(205px,1fr));
     gap: var(--gap);
     grid-auto-flow: dense;
-    margin: 20px 0;
+    margin: 30px 0;
 }
 
 .project {

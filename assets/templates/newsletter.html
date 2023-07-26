@@ -1,5 +1,9 @@
 {% extends 'partials/base.html' %}
 
+{% block title %}
+    Newsletter | {{ site_name }}
+{% endblock title %}
+
 
 {% block main %}
     <div class="container">
@@ -25,8 +29,8 @@
                 <div class="form-group">
                     {{ form.submit }}
                 </div>
+                <p>Retour vers <a href="{{ url_for("admin.index") }}">admin</a>.</p>
             </form>
-            <p>Retour vers <a href="{{ url_for("admin.index") }}">admin</a>.</p>
         </div>
     </div>
 {% endblock main %}
