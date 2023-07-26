@@ -270,6 +270,6 @@ def page_not_found(error):
 # Error 500
 @blog.errorhandler(500)
 def server_error(error):
-    return render_template("500.html"), 500
+    return render_template("500.html", email=blog.config["MAIL_USERNAME"]), 500
 
 

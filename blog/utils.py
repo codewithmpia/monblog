@@ -44,6 +44,7 @@ css = Bundle(
     "css/src/about.css",
     "css/src/search.css",
     "css/src/footer.css",
+    "css/src/error.css",
     filters=["cssmin"],
     output="css/dist/main.min.css"
 )
