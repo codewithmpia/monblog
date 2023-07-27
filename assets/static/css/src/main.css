@@ -159,3 +159,22 @@ img {
         padding: 0 20px;
     }
 }
+
+@media screen and (max-width: 500px) {
+    h1 {
+        font-size: 40px;
+        line-height: normal;
+    }
+
+    h2 {
+        font-size: 30px;
+        font-weight: 900;
+        line-height: normal;
+    }
+    .navigation {
+        gap: 10px;
+    }
+    .container {
+        padding: 0 10px;
+    }
+}

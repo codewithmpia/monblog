@@ -75,10 +75,6 @@
     margin-right: 20px;
 }
 
-.comment h4 {
-    font-size: 20px;
-}
-
 .comment-date {
     display: block;
     color: #121c42ad;
@@ -95,6 +91,6 @@
     background-color: #ebebeb77;
     border-radius: var(--radius);
     font-family: var(--font);
-    font-size: 16px;
+    font-size: 17px;
     overflow: auto;
 }
