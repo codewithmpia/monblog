@@ -48,6 +48,11 @@ def post_list(category_slug=None, category_id=None):
 @blog.route("/posts/<int:post_id>/<string:post_slug>/", methods=("GET", "POST"))
 def post_detail(post_id, post_slug):
     post = models.Post.query.get_or_404(post_id, post_slug)
+    
+    #increment number of views
+    post.views += 1
+    db.session.commit()
+
     category = models.Category.query.get_or_404(post.category_id)
 
     form = forms.CommentForm()

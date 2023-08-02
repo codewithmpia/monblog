@@ -39,6 +39,7 @@ class Post(db.Model):
     content = db.Column(db.Text(), nullable=False)
     image = db.Column(db.Unicode(128))
     date = db.Column(db.DateTime(), default=datetime.utcnow())
+    views = db.Column(db.Integer(), default=0)
     publish = db.Column(db.Boolean(), default=False)
     comments = db.relationship("Comment", backref="post")
 
